@@ -9,7 +9,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* Para os confetes não criarem barra de rolagem */
+    overflow-x: hidden; /* Previne scroll horizontal */
+    box-sizing: border-box;
 }
 
 .container {
@@ -18,6 +19,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     max-width: 800px;
+    width: 100%;
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
@@ -111,4 +113,34 @@ button:hover {
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+/* --- ESTILOS PARA CELULARES (RESPONSIVO) --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Menos espaçamento nas laterais */
+    }
+
+    .container {
+        padding: 20px 15px; /* Menos espaçamento interno */
+    }
+
+    h1 {
+        font-size: 2.5em; /* Título menor para caber melhor */
+    }
+
+    .message, .dream-message {
+        font-size: 1.1em; /* Textos com tamanho mais adequado */
+    }
+    
+    .gallery {
+        flex-direction: column; /* As fotos ficam uma abaixo da outra */
+        align-items: center; /* Centraliza as fotos na vertical */
+    }
+
+    .gallery img {
+        width: 90%; /* A imagem ocupa quase toda a largura */
+        height: auto; /* A altura se ajusta para não distorcer */
+        max-width: 300px; /* Limite para não ficar gigante */
+    }
 }
