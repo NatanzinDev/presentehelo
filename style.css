@@ -1,0 +1,114 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fce4ec, #ffc1e3);
+    color: #444;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Para os confetes não criarem barra de rolagem */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Títulos e Textos */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em;
+    color: #d81b60;
+    margin-bottom: 10px;
+}
+
+.message {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.dream-message {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #c2185b;
+    margin: 30px 0;
+}
+
+/* Galeria de Fotos */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(216, 27, 96, 0.3);
+}
+
+/* Botão e Mensagem Surpresa */
+button {
+    background-color: #d81b60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #c2185b;
+}
+
+.hidden {
+    display: none;
+}
+
+#specialMessage {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #d81b60;
+}
+
+/* Canvas para Confetes */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
