@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow-x: hidden; /* Previne scroll horizontal */
+    overflow-x: hidden; /* CORRIGIDO: Permite a rolagem vertical */
     box-sizing: border-box;
 }
 
@@ -119,10 +119,14 @@ button:hover {
 @media (max-width: 768px) {
     body {
         padding: 10px; /* Menos espaçamento nas laterais */
+        /* Importante: remove o alinhamento central para permitir rolagem */
+        display: block; 
     }
 
     .container {
         padding: 20px 15px; /* Menos espaçamento interno */
+        margin-top: 20px; /* Adiciona uma margem no topo em telas pequenas */
+        margin-bottom: 20px;
     }
 
     h1 {
